@@ -1,0 +1,57 @@
+:root{--bg:#faf9f6;--ink:#1c1c1a;--muted:#5a5a55;--line:#e4e1da;--accent:#2f5d50;--accent-soft:#e8efec;
+--serif:"Cormorant Garamond",Georgia,serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:#fff;padding:.5rem 1rem;z-index:10}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+header.top{position:sticky;top:0;background:rgba(250,249,246,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:5}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:68px;gap:1rem}
+.logo{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--ink);text-decoration:none;letter-spacing:.01em}
+.logo span{color:var(--accent)}
+nav ul{list-style:none;display:flex;gap:1.6rem;flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+nav a:hover{color:var(--ink)}
+section{padding:7rem 0;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:1.2rem}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15}
+h1{font-size:clamp(2.8rem,7vw,5.2rem);max-width:14ch;margin-bottom:2rem}
+h1 em,h2 em{color:var(--accent);font-style:italic}
+h2{font-size:clamp(2.1rem,4.5vw,3.2rem);margin-bottom:1.5rem;max-width:20ch}
+h3{font-size:1.45rem;margin-bottom:.6rem}
+.lead{font-size:1.2rem;color:var(--muted);max-width:60ch}
+.hero{padding:9rem 0 8rem}
+.btn{display:inline-block;margin-top:2.5rem;padding:.9rem 1.8rem;border:1px solid var(--ink);color:var(--ink);text-decoration:none;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;transition:.2s}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.grid{display:grid;gap:3rem;margin-top:4rem}
+.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.card p,.item p{color:var(--muted)}
+.mission{margin-top:5rem;padding:3rem;background:var(--accent-soft);border-left:3px solid var(--accent)}
+.mission blockquote{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.35;font-style:italic}
+.values{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:3rem}
+.values strong{display:block;font-family:var(--serif);font-size:1.3rem;font-weight:500}
+.values span{color:var(--muted);font-size:.95rem}
+.policy-head{display:grid;grid-template-columns:1fr;gap:1rem}
+.letter{font-family:var(--serif);font-size:6rem;line-height:1;color:var(--accent);opacity:.9}
+ol.commit{list-style:none;counter-reset:c;margin-top:3.5rem;border-top:1px solid var(--line)}
+ol.commit li{counter-increment:c;display:grid;grid-template-columns:4rem 1fr;gap:1rem;padding:2rem 0;border-bottom:1px solid var(--line)}
+ol.commit li::before{content:"0" counter(c);font-family:var(--serif);font-size:1.4rem;color:var(--accent)}
+ol.commit p{color:var(--muted);max-width:68ch}
+.alt{background:#fff}
+.table-wrap{overflow-x:auto;margin-top:3.5rem}
+table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:820px}
+caption{text-align:left;color:var(--muted);font-size:.9rem;padding-bottom:1rem}
+th{text-align:left;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:1rem;border-bottom:2px solid var(--ink)}
+td{padding:1.4rem 1rem;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{white-space:nowrap;font-weight:600}
+td strong{font-weight:600}
+.ods{display:inline-block;background:var(--accent-soft);color:var(--accent);font-weight:600;font-size:.8rem;padding:.2rem .6rem;border-radius:2px;margin:0 .3rem .3rem 0;white-space:nowrap}
+.tag{font-size:.75rem;letter-spacing:.1em;color:var(--accent)}
+footer{padding:6rem 0 3rem;background:var(--ink);color:#d9d7d0}
+footer h2{color:#fff}
+footer a{color:#a9d3c4}
+footer .small{margin-top:5rem;padding-top:2rem;border-top:1px solid #3a3a36;font-size:.85rem;color:#a3a199}
+@media(max-width:760px){nav ul{gap:.9rem}nav a{font-size:.7rem}.top .wrap{height:auto;padding:1rem 1.5rem;flex-direction:column;align-items:flex-start}section{padding:4.5rem 0}.hero{padding:5rem 0}ol.commit li{grid-template-columns:2.8rem 1fr}.mission{padding:2rem}}
