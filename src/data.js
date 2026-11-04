@@ -1,8 +1,8 @@
 export const policies = {
  "ambiental": [
   {
-   "t": "Infraestructura y alojamiento verde",
-   "d": "Alojamos todas las aplicaciones web y móviles que desarrollamos en proveedores de hosting que utilizan energías 100 % renovables, como la solar, y cuentan con certificaciones de gestión ambiental verificables como la ISO 14001."
+   "t": "Infraestructura y alojamiento verde (green hosting)",
+   "d": "Alojamos todas las aplicaciones web y móviles que desarrollamos en proveedores de hosting que utilizan energías 100 % renovables, como la solar, y cuentan con certificaciones de gestión ambiental verificables como la ISO 14001. Antes de contratar comprobamos que el proveedor figura como verde en el registro de la Green Web Foundation, elegimos centros de datos con un PUE (eficiencia energética) bajo y dimensionamos cada servidor a su carga real para no mantener máquinas sobredimensionadas encendidas."
   },
   {
    "t": "Desarrollo bajo el principio de Sustainability by Design",
@@ -70,8 +70,8 @@ export const policies = {
 export const odsRows = [
  {
   "dim": "Ambiental (A)",
-  "title": "Servidores y alojamiento verde",
-  "desc": "alojar las aplicaciones web y móviles en proveedores de hosting que utilicen energías 100 % renovables y cuenten con certificación ISO 14001.",
+  "title": "Servidores y alojamiento verde (green hosting)",
+  "desc": "alojar las aplicaciones web y móviles en proveedores de hosting que utilicen energías 100 % renovables y cuenten con certificación ISO 14001, verificados en la Green Web Foundation y con servidores dimensionados a su carga real.",
   "ods": [
    {
     "n": "ODS 7",

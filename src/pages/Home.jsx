@@ -18,6 +18,16 @@ const steps = [
   { icon: Code, t: 'Desarrollo', d: 'Código limpio y eficiente, alojado en infraestructura con energía renovable.' },
   { icon: Bulb, t: 'Lanzamiento y formación', d: 'Te entregamos el código y te enseñamos a gestionarlo con total autonomía.' },
 ]
+const green = [
+  { k: '01', t: 'Energía renovable', d: 'Alojamos las apps en centros de datos que funcionan con energía 100 % renovable.' },
+  { k: '02', t: 'Eficiencia PUE', d: 'Elegimos centros de datos con un PUE bajo: más energía para los servidores y menos para refrigeración.' },
+  { k: '03', t: 'Proveedores verificados', d: 'Comprobamos cada proveedor en el registro de la Green Web Foundation antes de contratarlo.' },
+  { k: '04', t: 'Servidores a medida', d: 'Dimensionamos cada servidor a su carga real (right-sizing) y apagamos lo que no se usa.' },
+  { k: '05', t: 'CDN y caché', d: 'Servimos el contenido desde el punto más cercano y cacheamos para evitar peticiones repetidas.' },
+  { k: '06', t: 'Imágenes eficientes', d: 'Formatos modernos (AVIF, WebP), tamaños adaptados y carga diferida.' },
+  { k: '07', t: 'Despliegues carbon-aware', d: 'Programamos builds y tareas pesadas en las horas en que la red eléctrica es más limpia.' },
+  { k: '08', t: 'Medimos la huella', d: 'Analizamos cada web con herramientas como Website Carbon y compartimos el resultado con el cliente.' },
+]
 const values = [
   { icon: Globe, t: 'Responsabilidad', d: 'Medimos el impacto ambiental de lo que desarrollamos.' },
   { icon: Users, t: 'Inclusión', d: 'Una web solo es buena si todo el mundo puede usarla.' },
@@ -99,6 +109,25 @@ export default function Home() {
               <span>{v.d}</span>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      <section className="section section-alt" id="green-hosting">
+        <div className="wrap">
+          <Reveal className="section-head">
+            <p className="eyebrow">Alojamiento sostenible · Green hosting</p>
+            <h2>Tu web, alojada <em>de forma sostenible</em>.</h2>
+            <p className="lead">Una aplicación consume energía cada segundo que está en línea. Por eso cuidamos dónde y cómo se aloja tanto como el código que escribimos.</p>
+          </Reveal>
+          <div className="grid g4 green">
+            {green.map((g, i) => (
+              <Reveal key={g.k} delay={(i % 4) * 0.05} className="green-item">
+                <span className="green-k">{g.k}</span>
+                <strong>{g.t}</strong>
+                <span>{g.d}</span>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 

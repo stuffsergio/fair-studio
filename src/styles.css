@@ -200,3 +200,10 @@ tbody tr{transition:background-color 150ms var(--ease-out)}
 .form-ok{text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;padding:30px 10px;color:var(--ink)}
 .form-ok svg{color:var(--c2)}.form-ok p{color:var(--muted);margin:0 0 10px}
 .btn[disabled]{opacity:.6;cursor:progress}
+
+/* ---------- Green hosting ---------- */
+.green{gap:14px}
+.green-item{display:flex;flex-direction:column;gap:6px;padding:24px;background:#fff;border:1px solid var(--line);border-radius:22px;transition:transform 250ms var(--ease-out),box-shadow 250ms var(--ease-out)}
+@media (hover:hover) and (pointer:fine){.green-item:hover{transform:translateY(-3px);box-shadow:0 18px 40px -22px rgba(35,69,224,.35)}}
+.green-k{font:500 .72rem ui-monospace,Menlo,monospace;color:var(--c2);letter-spacing:.08em;margin-bottom:10px}
+.green-item span:last-child{color:var(--muted);font-size:.93rem}
