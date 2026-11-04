@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Mail } from '../icons.jsx'
+import CopyEmail from './CopyEmail.jsx'
 
 export default function Footer() {
   return (
@@ -19,7 +19,7 @@ export default function Footer() {
         </div>
         <div>
           <h4>Contacto</h4>
-          <a className="footer-mail" href="mailto:hola@fairstudio.example"><Mail /> hola@fairstudio.example</a>
+          <CopyEmail tone="light" className="footer-mail" />
         </div>
       </div>
       <div className="wrap footer-bottom">

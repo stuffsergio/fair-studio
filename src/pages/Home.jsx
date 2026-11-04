@@ -1,13 +1,16 @@
 import GradientBars from '../components/GradientBars.jsx'
 import Button from '../components/Button.jsx'
 import Reveal from '../components/Reveal.jsx'
+import AsciiCard from '../components/AsciiCard.jsx'
+import ContactForm from '../components/ContactForm.jsx'
+import CopyEmail from '../components/CopyEmail.jsx'
 import { Monitor, Phone, Sparkles, Search, Pencil, Code, Bulb, Heart, Users, ShieldCheck, Globe } from '../icons.jsx'
 
 
 const services = [
-  { icon: Monitor, t: 'Diseño y desarrollo web', d: 'Webs corporativas, tiendas online y plataformas a medida, accesibles y pensadas para cualquier dispositivo.' },
-  { icon: Phone, t: 'Aplicaciones móviles', d: 'Apps para iOS y Android que acercan los servicios de cada empresa a sus clientes.' },
-  { icon: Sparkles, t: 'Digitalización y acompañamiento', d: 'Estrategia digital, mantenimiento y formación para que cada cliente sea autónomo con su plataforma.' },
+  { icon: Monitor, bg: '#2345e0', fg: '#8fa2ff', ink: '#fff', label: 'FAIR STUDIO · WEB', t: 'Diseño y desarrollo web', d: 'Webs corporativas, tiendas online y plataformas a medida, accesibles y pensadas para cualquier dispositivo.' },
+  { icon: Phone, bg: '#ff9dc5', fg: '#fbf0ee', ink: '#0d0d12', label: 'FAIR STUDIO · APPS', t: 'Aplicaciones móviles', d: 'Apps para iOS y Android que acercan los servicios de cada empresa a sus clientes.' },
+  { icon: Sparkles, bg: '#000', fg: '#2345e0', ink: '#fbf0ee', label: 'FAIR STUDIO · DIGITAL', t: 'Digitalización y acompañamiento', d: 'Estrategia digital, mantenimiento y formación para que cada cliente sea autónomo con su plataforma.' },
 ]
 const steps = [
   { icon: Search, t: 'Descubrimiento', d: 'Escuchamos tu negocio, tus clientes y tus objetivos antes de escribir una sola línea.' },
@@ -46,12 +49,10 @@ export default function Home() {
             <p className="eyebrow">Servicios</p>
             <h2>Todo lo que tu empresa necesita para estar <em>en digital</em>.</h2>
           </Reveal>
-          <div className="grid g3">
+          <div className="grid g3 acards">
             {services.map((s, i) => (
-              <Reveal key={s.t} delay={i * 0.06} className="card">
-                <span className="card-icon"><s.icon /></span>
-                <h3>{s.t}</h3>
-                <p>{s.d}</p>
+              <Reveal key={s.t} delay={i * 0.06}>
+                <AsciiCard bg={s.bg} fg={s.fg} ink={s.ink} label={s.label} Icon={s.icon} title={s.t} text={s.d} seed={i * 2.3 + 1} />
               </Reveal>
             ))}
           </div>
@@ -115,11 +116,15 @@ export default function Home() {
 
       <section className="section cta" id="contacto">
         <GradientBars />
-        <Reveal className="wrap cta-inner">
-          <h2>¿Hablamos de <em>tu proyecto</em>?</h2>
-          <p>Escríbenos y te respondemos en menos de 48 horas con una propuesta clara, sin letra pequeña.</p>
-          <Button href="mailto:hola@fairstudio.example" arrow>hola@fairstudio.example</Button>
-        </Reveal>
+        <div className="wrap cta-grid">
+          <Reveal className="cta-inner">
+            <p className="eyebrow eyebrow-light">Contacto</p>
+            <h2>¿Hablamos de <em>tu proyecto</em>?</h2>
+            <p>Escríbenos y te respondemos en menos de 48 horas con una propuesta clara, sin letra pequeña.</p>
+            <CopyEmail tone="light" />
+          </Reveal>
+          <Reveal delay={0.08}><ContactForm /></Reveal>
+        </div>
       </section>
     </>
   )

@@ -158,3 +158,45 @@ tbody tr{transition:background-color 150ms var(--ease-out)}
 .enter{opacity:0;transform:translateY(14px);animation:enter 520ms var(--ease-out) forwards;animation-delay:calc(120ms + var(--d) * 70ms)}
 @keyframes enter{to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.enter{opacity:1;transform:none;animation:none}}
+
+/* ---------- Copiar correo ---------- */
+.copy-email{position:relative;display:inline-flex;align-items:center;gap:8px;font-weight:500}
+.copy-email a{color:inherit;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px}
+.copy-c{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:8px;border:1px solid currentColor;background:transparent;color:inherit;font:600 .8rem/1 ui-monospace,Menlo,monospace;cursor:pointer;opacity:.75;transition:opacity 150ms var(--ease-out),transform 150ms var(--ease-out),background-color 150ms}
+.copy-c:hover{opacity:1}.copy-c:active{transform:scale(.92)}
+.copy-c:focus-visible{outline:2px solid var(--c1);outline-offset:2px}
+.copy-tip{position:absolute;right:-6px;top:-30px;font-size:.72rem;font-weight:600;padding:4px 8px;border-radius:999px;background:var(--ink);color:#fff;pointer-events:none}
+.copy-light .copy-tip{background:#fff;color:var(--ink)}
+.cta-inner .copy-email{font-size:1.05rem}
+
+/* ---------- Tarjetas ASCII ---------- */
+.acards{align-items:stretch}
+.acard{position:relative;overflow:hidden;border-radius:28px;background:var(--bg);color:var(--ink);min-height:440px;padding:26px;display:flex;flex-direction:column;justify-content:space-between;isolation:isolate;
+  transition:transform 300ms var(--ease-out),box-shadow 300ms var(--ease-out)}
+.acard canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+@media (hover:hover) and (pointer:fine){.acard:hover{transform:translateY(-6px) scale(1.01);box-shadow:0 30px 60px -30px rgba(35,69,224,.55)}}
+.acard-top{display:flex;justify-content:space-between;align-items:flex-start}
+.acard-logo{font-size:2.6rem;line-height:1;display:inline-flex}
+.acard-label{font:500 .72rem/1.5 ui-monospace,Menlo,monospace;letter-spacing:.08em;text-align:right}
+.acard h3{font-family:var(--sans);font-weight:500;font-size:clamp(1.6rem,2.4vw,2rem);line-height:1.1;letter-spacing:-.02em;margin:0 0 10px}
+.acard p{font-size:.92rem;opacity:.85;max-width:34ch}
+
+/* ---------- Contacto ---------- */
+.cta-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.cta-grid .cta-inner{text-align:left;align-items:flex-start}
+.eyebrow-light{color:var(--c1)}
+@media (max-width:880px){.cta-grid{grid-template-columns:1fr}}
+.form-card{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);color:var(--ink);border-radius:24px;padding:28px;box-shadow:0 30px 70px -30px rgba(0,0,0,.5)}
+.form-card form{display:flex;flex-direction:column;gap:14px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:560px){.form-row{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:6px;font-size:.8rem;font-weight:600;color:#33333d}
+.field input,.field select,.field textarea{font:400 .95rem var(--sans);color:var(--ink);background:#fff;border:1px solid rgba(13,13,18,.14);border-radius:12px;padding:11px 13px;resize:vertical;transition:border-color 150ms,box-shadow 150ms}
+.field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:var(--c2);box-shadow:0 0 0 3px rgba(35,69,224,.15)}
+.field.has-err input,.field.has-err select,.field.has-err textarea{border-color:#d33}
+.field em{font-style:normal;font-weight:500;color:#c22;font-size:.76rem}
+.form-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:4px}
+.form-foot small{color:var(--muted);font-size:.75rem}
+.form-ok{text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;padding:30px 10px;color:var(--ink)}
+.form-ok svg{color:var(--c2)}.form-ok p{color:var(--muted);margin:0 0 10px}
+.btn[disabled]{opacity:.6;cursor:progress}
