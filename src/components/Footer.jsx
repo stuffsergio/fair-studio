@@ -7,15 +7,20 @@ export default function Footer() {
       <div className="wrap footer-grid">
         <div>
           <Link to="/" className="logo logo-light">Fair<span>·</span>Studio</Link>
-          <p className="muted">Agencia tecnológica de desarrollo y digitalización empresarial.</p>
         </div>
         <div>
-          <h4>Estudio</h4>
-          <ul><li><Link to="/?s=servicios">Servicios</Link></li><li><Link to="/?s=nosotros">Nosotros</Link></li><li><Link to="/?s=proceso">Proceso</Link></li></ul>
+          <h4>Inicio</h4>
+          <ul>
+            <li><Link to="/?s=servicios">Servicios</Link></li>
+            <li><Link to="/?s=mision">Misión y valores</Link></li>
+          </ul>
         </div>
         <div>
-          <h4>Compromiso</h4>
-          <ul><li><Link to="/politicas">Política ASG</Link></li><li><Link to="/politicas?s=ods">ASG y ODS</Link></li><li><Link to="/politicas?s=gobernanza">Canal ético</Link></li></ul>
+          <h4>Políticas ASG</h4>
+          <ul>
+            <li><Link to="/politicas">Políticas ASG</Link></li>
+            <li><Link to="/politicas?s=ods">Tabla de Relación entre Política ASG y ODS</Link></li>
+          </ul>
         </div>
         <div>
           <h4>Contacto</h4>
@@ -23,7 +28,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="wrap footer-bottom">
-        <p>© 2026 Fair Studio · Empresa ficticia creada para la asignatura de Sostenibilidad aplicada al sistema productivo (1º DAW).</p>
+        <p>FAIR STUDIO</p>
       </div>
     </footer>
   )

@@ -6,7 +6,7 @@ import { Menu, Close } from '../icons.jsx'
 const links = [
   { label: 'Inicio', to: '/' },
   { label: 'Servicios', to: '/?s=servicios' },
-  { label: 'Nosotros', to: '/?s=nosotros' },
+  { label: 'Misión y valores', to: '/?s=mision' },
   { label: 'Políticas ASG', to: '/politicas' },
   { label: 'Contacto', to: '/?s=contacto' },
 ]
@@ -47,7 +47,7 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-        <Link to="/?s=contacto" className="btn btn-primary btn-sm nav-cta">Hablemos</Link>
+        <Link to="/?s=contacto" className="btn btn-primary btn-sm nav-cta">Contacto</Link>
         <button className="nav-toggle" aria-label={open ? 'Cerrar menú' : 'Abrir menú'} aria-expanded={open} onClick={() => setOpen(!open)}>
           {open ? <Close /> : <Menu />}
         </button>

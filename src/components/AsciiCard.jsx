@@ -51,7 +51,7 @@ export default function AsciiCard({ bg, fg, ink = '#fff', label, Icon, title, te
       <canvas ref={ref} aria-hidden="true" />
       <div className="acard-top">
         <span className="acard-logo"><Icon /></span>
-        <span className="acard-label">{label}<br />2026</span>
+        {label ? <span className="acard-label">{label}</span> : <span className="acard-label" aria-hidden="true" />}
       </div>
       <div className="acard-bottom">
         <h3>{title}</h3>
