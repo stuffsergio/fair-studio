@@ -4,7 +4,7 @@ import AsciiCard from '../components/AsciiCard.jsx'
 import ContactForm from '../components/ContactForm.jsx'
 import CopyEmail from '../components/CopyEmail.jsx'
 import { Monitor, Phone, Sparkles } from '../icons.jsx'
-import { actividadPrincipal, services, mision, valores } from '../data.js'
+import { services, mision, valores } from '../data.js'
 
 const serviceCards = [
   { icon: Monitor, bg: '#2345e0', fg: '#8fa2ff', ink: '#fff', ...services[0] },
@@ -17,9 +17,12 @@ export default function Home() {
     <>
       <section className="hero" id="inicio">
         <GradientBars />
-        <div className="wrap hero-inner">
-          <h1 style={{ "--d": 1 }} className="enter">FAIR <em>STUDIO</em></h1>
-          <p style={{ "--d": 2 }} className="enter hero-lead">{actividadPrincipal}</p>
+        <div className="wrap hero-inner hero-split">
+          <div className="hero-copy">
+            <h1 style={{ "--d": 1 }} className="enter">FAIR<br /><em>STUDIO</em></h1>
+            <p style={{ "--d": 2 }} className="enter hero-sub">Webs, tiendas online y apps móviles para pymes, hechas de forma sostenible.</p>
+          </div>
+          <div className="hero-aside" aria-hidden="true" />
         </div>
       </section>
 
