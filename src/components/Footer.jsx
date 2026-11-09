@@ -1,34 +1,64 @@
 import { Link } from 'react-router-dom'
 import CopyEmail from './CopyEmail.jsx'
+import Reveal from './Reveal.jsx'
+
+const nav = [
+  { label: 'Inicio', to: '/' },
+  { label: 'Servicios', to: '/?s=servicios' },
+  { label: 'Misión y valores', to: '/?s=mision' },
+  { label: 'Políticas ASG', to: '/politicas' },
+  { label: 'Contacto', to: '/?s=contacto' },
+]
+
+const policies = [
+  { label: 'Política Ambiental', to: '/politicas?s=ambiental' },
+  { label: 'Política Social', to: '/politicas?s=social' },
+  { label: 'Política de Gobernanza', to: '/politicas?s=gobernanza' },
+]
 
 export default function Footer() {
+  const toTop = (e) => {
+    e.preventDefault()
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <footer className="footer">
-      <div className="wrap footer-grid">
-        <div>
-          <Link to="/" className="logo logo-light">Fair<span>·</span>Studio</Link>
+      <div className="wrap footer-inner">
+        <div className="footer-main">
+          <Reveal className="footer-contact">
+            <p className="footer-kicker">Contacto</p>
+            <CopyEmail tone="light" className="footer-mail" />
+          </Reveal>
+
+          <div className="footer-info">
+            <Reveal className="footer-col" delay={0.04}>
+              <p className="footer-kicker">Navegar</p>
+              <ul>
+                {nav.map((l) => (
+                  <li key={l.to}><Link to={l.to} className="footer-link">{l.label}</Link></li>
+                ))}
+              </ul>
+            </Reveal>
+            <Reveal className="footer-col" delay={0.08}>
+              <p className="footer-kicker">Políticas ASG</p>
+              <ul>
+                {policies.map((l) => (
+                  <li key={l.to}><Link to={l.to} className="footer-link">{l.label}</Link></li>
+                ))}
+              </ul>
+            </Reveal>
+            <button type="button" className="footer-scroll" onClick={toTop} aria-label="Volver arriba" />
+          </div>
         </div>
-        <div>
-          <h4>Inicio</h4>
-          <ul>
-            <li><Link to="/?s=servicios">Servicios</Link></li>
-            <li><Link to="/?s=mision">Misión y valores</Link></li>
-          </ul>
+
+        <Reveal className="footer-wordmark" delay={0.06}>
+          <Link to="/" aria-label="Fair Studio, inicio">FAIR&nbsp;STUDIO</Link>
+        </Reveal>
+
+        <div className="footer-bottom">
+          <p>© 2026 Fair Studio</p>
         </div>
-        <div>
-          <h4>Políticas ASG</h4>
-          <ul>
-            <li><Link to="/politicas">Políticas ASG</Link></li>
-            <li><Link to="/politicas?s=ods">Tabla de Relación entre Política ASG y ODS</Link></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Contacto</h4>
-          <CopyEmail tone="light" className="footer-mail" />
-        </div>
-      </div>
-      <div className="wrap footer-bottom">
-        <p>FAIR STUDIO</p>
       </div>
     </footer>
   )
