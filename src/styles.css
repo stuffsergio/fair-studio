@@ -72,18 +72,22 @@ h3{font-size:1.05rem;font-weight:600;letter-spacing:-.01em}
 .hero-inner{position:relative;z-index:1;padding-top:120px;padding-bottom:110px;width:100%;max-width:1320px}
 .hero-split{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:40px;align-items:center}
 .hero-copy{max-width:none;width:100%}
-.hero-aside{min-height:320px}
+.hero-aside{display:flex;align-items:center;justify-content:center;min-height:0}
+.hero-aside .acard-hero{width:min(100%,420px);aspect-ratio:4/5;min-height:0;height:auto;padding:22px;border-radius:28px}
+.hero-aside .acard-hero .acard-bottom{display:none}
+.hero-aside .acard-hero .acard-label{font-size:.7rem;letter-spacing:.12em;opacity:.9}
 .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.55);backdrop-filter:blur(8px);font-size:.82rem;font-weight:500}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--c2);box-shadow:0 0 0 3px rgba(35,69,224,.2)}
-.hero h1{font-family:var(--serif);font-size:clamp(4.5rem,11vw,10rem);font-weight:400;line-height:.86;letter-spacing:-.05em;margin:0;max-width:none}
+.hero h1{font-family:var(--serif);font-size:clamp(4.5rem,11vw,10rem);font-weight:400;line-height:.86;letter-spacing:-.05em;margin:0;max-width:none;color:#fff;text-shadow:0 1px 18px rgba(13,13,18,.28),0 0 1px rgba(13,13,18,.35)}
 .hero h1 em{font-style:italic;display:block}
-.hero-sub{font-size:clamp(1.2rem,1.55vw,1.35rem);line-height:1.4;max-width:36ch;margin-top:28px;color:#24242c;font-weight:500}
+.hero-sub{font-size:clamp(1.2rem,1.55vw,1.35rem);line-height:1.4;max-width:36ch;margin-top:28px;color:#fff;font-weight:500;text-shadow:0 1px 14px rgba(13,13,18,.3),0 0 1px rgba(13,13,18,.35)}
 .hero-lead{font-size:1.15rem;max-width:52ch;margin-top:22px;color:#24242c}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
 @media (max-width:880px){
   .hero-split{grid-template-columns:1fr;gap:28px}
   .hero-copy{max-width:none}
-  .hero-aside{display:none;min-height:0}
+  .hero-aside{display:flex;justify-content:flex-start}
+  .hero-aside .acard-hero{width:min(100%,280px);aspect-ratio:1/1.1}
   .hero h1{font-size:clamp(3.8rem,15vw,6.4rem)}
   .hero-sub{max-width:28ch}
 }

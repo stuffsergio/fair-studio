@@ -22,7 +22,16 @@ export default function Home() {
             <h1 style={{ "--d": 1 }} className="enter">FAIR<br /><em>STUDIO</em></h1>
             <p style={{ "--d": 2 }} className="enter hero-sub">Webs, tiendas online y apps móviles para pymes, hechas de forma sostenible.</p>
           </div>
-          <div className="hero-aside" aria-hidden="true" />
+          <div className="hero-aside">
+            <AsciiCard
+              bg="#2345e0"
+              fg="#b8c6ff"
+              ink="#fff"
+              label={"FAIR STUDIO"}
+              shape="leaf"
+              seed={4.2}
+            />
+          </div>
         </div>
       </section>
 
