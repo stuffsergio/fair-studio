@@ -25,10 +25,14 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', on)
   }, [])
   useEffect(() => setOpen(false), [loc])
+  useEffect(() => {
+    document.body.classList.toggle('nav-open', open)
+    return () => document.body.classList.remove('nav-open')
+  }, [open])
 
   return (
     <motion.header
-      className={`nav ${scrolled || loc.pathname !== '/' ? 'is-solid' : ''}`}
+      className={`nav ${scrolled || loc.pathname !== '/' ? 'is-solid' : ''} ${open ? 'is-open' : ''}`}
       initial={{ opacity: 0, y: -12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease }}
@@ -48,7 +52,7 @@ export default function Navbar() {
           ))}
         </ul>
         <Link to="/?s=contacto" className="btn btn-primary btn-sm nav-cta">Contacto</Link>
-        <button className="nav-toggle" aria-label={open ? 'Cerrar menú' : 'Abrir menú'} aria-expanded={open} onClick={() => setOpen(!open)}>
+        <button type="button" className="nav-toggle" aria-label={open ? 'Cerrar menú' : 'Abrir menú'} aria-expanded={open} onClick={() => setOpen(!open)}>
           {open ? <Close /> : <Menu />}
         </button>
       </nav>
@@ -61,7 +65,11 @@ export default function Navbar() {
             exit={{ opacity: 0, scale: 0.98, y: -4, transition: { duration: 0.15 } }}
             transition={{ duration: 0.22, ease }}
           >
-            {links.map((l) => <li key={l.to}><Link to={l.to}>{l.label}</Link></li>)}
+            {links.map((l) => (
+              <li key={l.to}>
+                <Link to={l.to} aria-current={current === l.to ? 'page' : undefined}>{l.label}</Link>
+              </li>
+            ))}
           </motion.ul>
         )}
       </AnimatePresence>

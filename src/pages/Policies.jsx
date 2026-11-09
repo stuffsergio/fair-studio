@@ -51,7 +51,8 @@ export default function Policies() {
           <Reveal className="section-head">
             <h2>Tabla de Relación entre Política ASG y ODS</h2>
           </Reveal>
-          <Reveal className="table-wrap" role="region" aria-label="Tabla de Relación entre Política ASG y ODS" tabIndex={0}>
+
+          <Reveal className="table-wrap table-desktop" role="region" aria-label="Tabla de Relación entre Política ASG y ODS" tabIndex={0}>
             <table>
               <caption>Tabla de Relación entre Política ASG y ODS</caption>
               <thead>
@@ -74,6 +75,17 @@ export default function Policies() {
               </tbody>
             </table>
           </Reveal>
+
+          <div className="ods-cards" role="list" aria-label="Tabla de Relación entre Política ASG y ODS">
+            {odsRows.map((r, i) => (
+              <Reveal key={r.compromiso} className="ods-card" role="listitem" delay={i * 0.03}>
+                <span className={`dim dim-${r.dim[0]}`}>{r.dim}</span>
+                <h3>{r.compromiso}</h3>
+                <div className="ods-card-ods">{r.ods.map((o) => <div key={o} className="ods-item">{o}</div>)}</div>
+                <p>{r.why}</p>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
     </>
