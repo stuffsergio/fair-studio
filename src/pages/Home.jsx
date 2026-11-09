@@ -8,31 +8,25 @@ import { Monitor, Phone, Sparkles, Search, Pencil, Code, Bulb, Heart, Users, Shi
 
 
 const services = [
-  { icon: Monitor, bg: '#2345e0', fg: '#8fa2ff', ink: '#fff', label: 'FAIR STUDIO · WEB', t: 'Diseño y desarrollo web', d: 'Webs corporativas, tiendas online y plataformas a medida, accesibles y pensadas para cualquier dispositivo.' },
-  { icon: Phone, bg: '#ff9dc5', fg: '#fbf0ee', ink: '#0d0d12', label: 'FAIR STUDIO · APPS', t: 'Aplicaciones móviles', d: 'Apps para iOS y Android que acercan los servicios de cada empresa a sus clientes.' },
-  { icon: Sparkles, bg: '#000', fg: '#2345e0', ink: '#fbf0ee', label: 'FAIR STUDIO · DIGITAL', t: 'Digitalización y acompañamiento', d: 'Estrategia digital, mantenimiento y formación para que cada cliente sea autónomo con su plataforma.' },
+  { icon: Monitor, bg: '#2345e0', fg: '#8fa2ff', ink: '#fff', label: 'FAIR STUDIO · A MEDIDA', t: 'Diseño y desarrollo a medida', d: 'Trabajamos mano a mano con el cliente para crear sitios web corporativos, porfolios, tiendas online y aplicaciones móviles enfocados en la experiencia de usuario (UX/UI) y la identidad visual de la marca.' },
+  { icon: Phone, bg: '#ff9dc5', fg: '#fbf0ee', ink: '#0d0d12', label: 'FAIR STUDIO · SOPORTE', t: 'Mantenimiento y soporte informático', d: 'Realizamos un servicio continuo de optimización, actualización y gestión de servidores para nuestros clientes.' },
+  { icon: Sparkles, bg: '#000', fg: '#2345e0', ink: '#fbf0ee', label: 'FAIR STUDIO · CONSULTORÍA', t: 'Consultoría de digitalización', d: 'Acompañamos a pequeñas y medianas empresas en la integración estratégica de herramientas digitales eficaces.' },
 ]
 const steps = [
-  { icon: Search, t: 'Descubrimiento', d: 'Escuchamos tu negocio, tus clientes y tus objetivos antes de escribir una sola línea.' },
-  { icon: Pencil, t: 'Diseño', d: 'Prototipos claros y accesibles (WCAG AA) que validamos contigo.' },
-  { icon: Code, t: 'Desarrollo', d: 'Código limpio y eficiente, alojado en infraestructura con energía renovable.' },
-  { icon: Bulb, t: 'Lanzamiento y formación', d: 'Te entregamos el código y te enseñamos a gestionarlo con total autonomía.' },
+  { icon: Search, t: 'Descubrimiento', d: 'Escuchamos al cliente y su negocio para entender qué necesita digitalizar.' },
+  { icon: Pencil, t: 'Diseño a medida', d: 'Definimos la experiencia de usuario y la identidad visual de la marca.' },
+  { icon: Code, t: 'Desarrollo y soporte', d: 'Construimos la solución y ofrecemos mantenimiento continuo de servidores.' },
+  { icon: Bulb, t: 'Autonomía del cliente', d: 'Formamos al cliente para que gestione su plataforma con total autonomía.' },
 ]
 const green = [
-  { k: '01', t: 'Energía renovable', d: 'Alojamos las apps en centros de datos que funcionan con energía 100 % renovable.' },
-  { k: '02', t: 'Eficiencia PUE', d: 'Elegimos centros de datos con un PUE bajo: más energía para los servidores y menos para refrigeración.' },
-  { k: '03', t: 'Proveedores verificados', d: 'Comprobamos cada proveedor en el registro de la Green Web Foundation antes de contratarlo.' },
-  { k: '04', t: 'Servidores a medida', d: 'Dimensionamos cada servidor a su carga real (right-sizing) y apagamos lo que no se usa.' },
-  { k: '05', t: 'CDN y caché', d: 'Servimos el contenido desde el punto más cercano y cacheamos para evitar peticiones repetidas.' },
-  { k: '06', t: 'Imágenes eficientes', d: 'Formatos modernos (AVIF, WebP), tamaños adaptados y carga diferida.' },
-  { k: '07', t: 'Despliegues carbon-aware', d: 'Programamos builds y tareas pesadas en las horas en que la red eléctrica es más limpia.' },
-  { k: '08', t: 'Medimos la huella', d: 'Analizamos cada web con herramientas como Website Carbon y compartimos el resultado con el cliente.' },
+  { k: '01', t: 'Energías 100% renovables', d: 'Alojamos todas las aplicaciones web y móviles desarrolladas en proveedores de hosting que utilicen energías 100% renovables.' },
+  { k: '02', t: 'Certificaciones verificables', d: 'Exigimos que esos proveedores cuenten con certificaciones de gestión ambiental verificables.' },
 ]
 const values = [
-  { icon: Globe, t: 'Responsabilidad', d: 'Medimos el impacto ambiental de lo que desarrollamos.' },
-  { icon: Users, t: 'Inclusión', d: 'Una web solo es buena si todo el mundo puede usarla.' },
-  { icon: ShieldCheck, t: 'Transparencia', d: 'Precios claros y código que es del cliente.' },
-  { icon: Heart, t: 'Cuidado', d: 'Un equipo sano y formado hace un trabajo mejor.' },
+  { icon: Globe, t: 'Eficiencia y responsabilidad ambiental', d: 'Integramos compromisos ambientales en nuestra cadena de operaciones.' },
+  { icon: Users, t: 'Inclusión digital', d: 'Trabajamos para que la tecnología sea accesible y no genere dependencia.' },
+  { icon: ShieldCheck, t: 'Transparencia profesional', d: 'Presupuestos claros, sin letra pequeña, y propiedad del código para el cliente.' },
+  { icon: Heart, t: 'Innovación con propósito', d: 'Soluciones innovadoras y de alta calidad con impacto ético, ambiental y social positivo.' },
 ]
 
 export default function Home() {
@@ -41,10 +35,10 @@ export default function Home() {
       <section className="hero" id="inicio">
         <GradientBars />
         <div className="wrap hero-inner">
-          <p style={{ "--d": 1 }} className="enter badge"><span className="dot" /> Estudio de diseño y desarrollo digital</p>
-          <h1 style={{ "--d": 2 }} className="enter">Presencia digital<br />hecha <em>con justicia</em>.</h1>
+          <p style={{ "--d": 1 }} className="enter badge"><span className="dot" /> Agencia tecnológica · Fair Studio</p>
+          <h1 style={{ "--d": 2 }} className="enter">Desarrollo y<br />digitalización <em>empresarial</em>.</h1>
           <p style={{ "--d": 3 }} className="enter hero-lead">
-            Diseñamos y desarrollamos páginas web y aplicaciones móviles para empresas que todavía no tienen presencia digital o que quieren llevarla al siguiente nivel.
+            Fair Studio es una agencia tecnológica especializada en el desarrollo y digitalización empresarial, dedicada al diseño, desarrollo y mantenimiento de páginas webs corporativas, plataformas e-commerce y aplicaciones móviles para empresas y pymes que buscan elevar o consolidar su presencia digital.
           </p>
           <div style={{ "--d": 4 }} className="enter hero-actions">
             <Button to="/?s=contacto" arrow>Empezar un proyecto</Button>
@@ -57,7 +51,7 @@ export default function Home() {
         <div className="wrap">
           <Reveal className="section-head">
             <p className="eyebrow">Servicios</p>
-            <h2>Todo lo que tu empresa necesita para estar <em>en digital</em>.</h2>
+            <h2>Lo que ofrecemos a empresas y <em>pymes</em>.</h2>
           </Reveal>
           <div className="grid g3 acards">
             {services.map((s, i) => (
@@ -92,13 +86,12 @@ export default function Home() {
         <div className="wrap about">
           <Reveal>
             <p className="eyebrow">Nosotros</p>
-            <h2>Un estudio joven con <em>compromiso</em>.</h2>
-            <p className="lead">Somos un estudio joven del sector del desarrollo web. Acompañamos a pymes, comercios y profesionales en su digitalización: desde la primera idea hasta una plataforma que puedan gestionar por sí mismos.</p>
-            <p className="lead">Situamos la sostenibilidad en el centro porque todo lo que construimos queda en marcha durante años, en servidores y en los dispositivos de miles de usuarios.</p>
+            <h2>Fair Studio: crecimiento digital con <em>compromiso</em>.</h2>
+            <p className="lead">Somos una agencia tecnológica especializada en el desarrollo y digitalización empresarial. Trabajamos con empresas y pymes que buscan elevar o consolidar su presencia digital mediante webs corporativas, plataformas e-commerce y aplicaciones móviles.</p>
           </Reveal>
           <Reveal delay={0.08} className="mission">
             <p className="eyebrow">Nuestra misión</p>
-            <blockquote>Llevar a cada empresa al mundo digital de forma justa: con tecnología que respeta el planeta, que es accesible para todas las personas y que pertenece por completo a quien la encarga.</blockquote>
+            <blockquote>Nuestra misión es impulsar el crecimiento digital de nuestros clientes mediante soluciones innovadoras y de alta calidad, integrando en nuestra cadena de operaciones compromisos éticos, ambientales y sociales que aseguren un impacto positivo.</blockquote>
           </Reveal>
         </div>
         <div className="wrap grid g4 values">
@@ -115,9 +108,9 @@ export default function Home() {
       <section className="section section-alt" id="green-hosting">
         <div className="wrap">
           <Reveal className="section-head">
-            <p className="eyebrow">Alojamiento sostenible · Green hosting</p>
-            <h2>Tu web, alojada <em>de forma sostenible</em>.</h2>
-            <p className="lead">Una aplicación consume energía cada segundo que está en línea. Por eso cuidamos dónde y cómo se aloja tanto como el código que escribimos.</p>
+            <p className="eyebrow">Política Ambiental · Alojamiento</p>
+            <h2>Hosting con energías <em>renovables</em>.</h2>
+            <p className="lead">Nos comprometemos a alojar todas las aplicaciones web y móviles desarrolladas en proveedores de hosting que utilicen energías 100% renovables y cuenten con certificaciones de gestión ambiental verificables.</p>
           </Reveal>
           <div className="grid g4 green">
             {green.map((g, i) => (
@@ -149,7 +142,7 @@ export default function Home() {
           <Reveal className="cta-inner">
             <p className="eyebrow eyebrow-light">Contacto</p>
             <h2>¿Hablamos de <em>tu proyecto</em>?</h2>
-            <p>Escríbenos y te respondemos en menos de 48 horas con una propuesta clara, sin letra pequeña.</p>
+            <p>Escríbenos con una propuesta clara, sin letra pequeña, desglosando costes.</p>
             <CopyEmail tone="light" />
           </Reveal>
           <Reveal delay={0.08}><ContactForm /></Reveal>

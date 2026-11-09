@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="wrap footer-grid">
         <div>
           <Link to="/" className="logo logo-light">Fair<span>·</span>Studio</Link>
-          <p className="muted">Webs y apps para empresas, hechas con justicia.</p>
+          <p className="muted">Agencia tecnológica de desarrollo y digitalización empresarial.</p>
         </div>
         <div>
           <h4>Estudio</h4>

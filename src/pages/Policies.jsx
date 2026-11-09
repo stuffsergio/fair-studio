@@ -62,7 +62,7 @@ export default function Policies() {
                 {odsRows.map((r) => (
                   <tr key={r.title}>
                     <td><span className={`dim dim-${r.dim[0]}`}>{r.dim}</span></td>
-                    <td><strong>{r.title}:</strong> {r.desc}</td>
+                    <td><strong>{r.title}</strong>{r.desc ? <>: {r.desc}</> : null}</td>
                     <td>{r.ods.map((o) => <div key={o.n} className="ods-item"><span className="ods">{o.n}</span> {o.name}</div>)}</td>
                     <td>{r.why}</td>
                   </tr>
