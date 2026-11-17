@@ -1,30 +1,26 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx'
 import Policies from './pages/Policies.jsx'
-
-let lenis = null
-const reduce = typeof window !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches
-if (typeof window !== 'undefined' && !reduce) {
-  lenis = new Lenis({ duration: 1.1, easing: (t) => 1 - Math.pow(1 - t, 4) })
-  const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf) }
-  requestAnimationFrame(raf)
-}
-const scrollToEl = (el) => { if (lenis) lenis.scrollTo(el, { offset: -90 }); else el.scrollIntoView() }
-const toTop = () => { if (lenis) lenis.scrollTo(0, { immediate: true }); else window.scrollTo(0, 0) }
+import { scrollToId, toTop, ScrollTrigger } from './lib/scroll.js'
 
 function ScrollManager() {
   const { pathname, search } = useLocation()
   useEffect(() => {
     const id = new URLSearchParams(search).get('s')
     if (id) {
-      // espera a que termine la transición de página
-      const t = setTimeout(() => { const el = document.getElementById(id); el && scrollToEl(el) }, 60)
+      // espera a que termine la transición de página y a que la sección exista
+      let tries = 0, t
+      const go = () => {
+        const ready = document.getElementById(id)
+        if (ready) { ScrollTrigger.refresh(); scrollToId(id) }
+        else if (tries++ < 40) t = setTimeout(go, 60)
+      }
+      t = setTimeout(go, 60)
       return () => clearTimeout(t)
     }
   }, [pathname, search])
@@ -47,6 +43,7 @@ export default function App() {
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)', transitionEnd: { filter: 'none' } }}
           exit={{ opacity: 0, y: -8, filter: 'blur(4px)' }}
           transition={{ duration: 0.36, ease }}
+          onAnimationComplete={() => ScrollTrigger.refresh()}
         >
           <Routes location={loc}>
             <Route path="/" element={<Home />} />
